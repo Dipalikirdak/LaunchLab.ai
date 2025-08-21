@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Launch Page Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwindcssConfig.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+<body class="gradient-bg min-h-screen text-gray-800 dark:text-gray-200 transition-colors duration-300">
+  <div class="container mx-auto px-3 sm:px-4 py-6 sm:py-8 max-w-7xl">
+    <!-- Header -->
+    <header class="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 mb-6 sm:mb-10">
+      <div>
+        <h1 class="font-heading text-2xl sm:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+          LaunchLab<span class="text-purple-600">.ai</span>
+        </h1>
+        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Advanced startup landing page generator</p>
+      </div>
+      <div class="flex items-center gap-3 sm:gap-4">
+        <button id="themeToggle" class="theme-toggle glass rounded-full p-2">
+          <svg id="sunIcon" class="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+          </svg>
+          <svg id="moonIcon" class="w-5 h-5 sm:w-6 sm:h-6 text-indigo-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+      <!-- Section Selector -->
+      <div class="lg:col-span-1">
+        <div class="glass rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6">
+          <div class="flex justify-between items-center mb-3 sm:mb-4">
+            <h2 class="font-heading text-lg sm:text-xl font-semibold">Select Sections</h2>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Toggle sections to include in your launch page</p>
+          
+          <div class="grid grid-cols-3 sm:grid-cols-2 gap-2 sm:gap-3 section-grid">
+            <button data-section="hero" class="section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">🦸</span>
+              <span class="text-xs sm:text-sm">Hero</span>
+            </button>
+            <button data-section="features" class="section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">⚙️</span>
+              <span class="text-xs sm:text-sm">Features</span>
+            </button>
+            <button data-section="testimonials" class="section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">💬</span>
+              <span class="text-xs sm:text-sm">Testimonials</span>
+            </button>
+            <button data-section="pricing" class="section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">💵</span>
+              <span class="text-xs sm:text-sm">Pricing</span>
+            </button>
+            
+            <!-- Advanced Sections -->
+            <button data-section="howItWorks" class="advanced-section section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">🔧</span>
+              <span class="text-xs sm:text-sm">How It Works</span>
+            </button>
+            <button data-section="demo" class="advanced-section section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">🎥</span>
+              <span class="text-xs sm:text-sm">Demo</span>
+            </button>
+            <button data-section="faq" class="advanced-section section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">❓</span>
+              <span class="text-xs sm:text-sm">FAQ</span>
+            </button>
+            <button data-section="team" class="advanced-section section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">👥</span>
+              <span class="text-xs sm:text-sm">Team</span>
+            </button>
+            <button data-section="metrics" class="advanced-section section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">📈</span>
+              <span class="text-xs sm:text-sm">Metrics</span>
+            </button>
+            <button data-section="newsletter" class="advanced-section section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">✉️</span>
+              <span class="text-xs sm:text-sm">Newsletter</span>
+            </button>
+            <button data-section="integrations" class="advanced-section section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border onclick=""border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">🔄</span>
+              <span class="text-xs sm:text-sm">Integrations</span>
+            </button>
+            <button data-section="language" class="advanced-section section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">🌐</span>
+              <span class="text-xs sm:text-sm">Language</span>
+            </button>
+            <button data-section="comparison" class="advanced-section section-btn glass flex flex-col items-center justify-center py-3 sm:py-4 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-purple-400 transition-colors">
+              <span class="text-xl sm:text-2xl mb-1 sm:mb-2">📊</span>
+              <span class="text-xs sm:text-sm">Comparison</span>
+            </button>
+          </div>
+        </div>
+      <!-- Preview Container -->
+      <div class="lg:col-span-2">
+        <div class="glass rounded-2xl p-4 sm:p-6 h-full">
+          <div class="flex justify-between items-center mb-4 sm:mb-6">
+            <h2 class="font-heading text-lg sm:text-xl font-semibold">Live Preview</h2>
+            <div class="text-xs sm:text-sm bg-gray-100 dark:bg-gray-800 py-1 px-3 rounded-full">
+              Desktop View
+            </div>
+          </div>
+          
+          <div id="previewContainer" class="bg-white dark:bg-gray-900 rounded-xl p-4 sm:p-6 min-h-[450px] sm:min-h-[600px] overflow-auto preview-container">
+            <div class="text-center py-16 sm:py-20 text-gray-400" id="emptyPreview">
+              <div class="text-3xl sm:text-4xl mb-3">👋</div>
+              <h3 class="font-medium text-sm sm:text-base">Select sections to build your launch page</h3>
+              <p class="text-xs sm:text-sm mt-1">Toggle the sections on the left to see them appear here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Export Button -->
+    <div class="mt-6 sm:mt-8 flex justify-center">
+      <button id="exportBtn" class="glass font-heading px-6 py-3 sm:px-8 sm:py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold hover:opacity-90 transition-opacity flex items-center gap-2 text-sm sm:text-base">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+        Export HTML
+      </button>
+    </div>
+  </div>
+  
+  <!-- Export Modal -->
+  <div id="exportModal" class="export-modal">
+    <div class="export-content glass">
+      <div class="export-header">
+        <h3 class="font-heading text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">Export Your Launch Page</h3>
+        <p class="text-sm text-gray-400 mt-1">Choose your export format</p>
+      </div>
+      
+      <div class="export-options">
+        <div class="export-option active" data-format="html">
+          <div class="export-option-icon">📄</div>
+          <h4 class="font-medium font-colour">HTML Only</h4>
+          <p class="text-xs text-gray-400 mt-1 font-colour">Just the HTML structure</p>
+        </div>
+        
+        <div class="export-option" data-format="html-css">
+          <div class="export-option-icon">🎨</div>
+          <h4 class="font-medium font-colour">HTML + CSS</h4>
+          <p class="text-xs text- gray-400 mt-1 font-colour">Complete with styling</p>
+        </div>
+        
+        <div class="export-option" data-format="react">
+          <div class="export-option-icon">⚛️</div>
+          <h4 class="font-medium font-colour">React Component</h4>
+          <p class="text-xs text-gray-400 mt-1 font-colour">For React projects</p>
+        </div>
+        
+        <div class="export-option" data-format="tailwind">
+          <div class="export-option-icon">🌊</div>
+          <h4 class="font-medium font-colour">Tailwind Template</h4>
+          <p class="text-xs text-gray-400 mt-1 font-colour">Pure Tailwind classes</p>
+        </div>
+      </div>
+      
+      <div class="code-preview">
+        <pre id="codeContent">Select an export option to see the code preview</pre>
+      </div>
+      
+      <div class="copy-success" id="copySuccess">Copied to clipboard!</div>
+      
+      <div class="export-footer">
+        <button id="closeModalBtn" class="px-4 py-2 text-sm rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors mr-2">
+          Cancel
+        </button>
+        <button id="copyCodeBtn" class="px-4 py-2 text-sm rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 text-white hover:opacity-90 transition-opacity copy-btn">
+          Copy Code
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
