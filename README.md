@@ -27,4 +27,8 @@
 
 1. Clone the repository:  
    ```bash
+<<<<<<< HEAD
   git clone https://github.com/DipaliKirdak/LaunchLab.ai.git
+=======
+   git clone https://github.com/DipaliKirdak/LaunchLab.ai.git
+>>>>>>> b79d514b9e76c1b4a8db5bf9a0b3c62eef18c37e
